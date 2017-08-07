@@ -1,0 +1,16 @@
+
+<h1>Posts</h1>
+<hr />
+<input type="text" name="query" id="query" placeholder="I want to find…">
+<input type="submit" name="commit" value="Search" class="btn btn-default">
+<br>
+
+<% @posts.each do |post| %>
+  <h2><%= post.title %></h2>
+  <p>
+  <%= post.body %>
+  </p>
+<% end %>
+<hr />
+<%= paginate @posts %>
+<%= page_entries_info @posts %>
